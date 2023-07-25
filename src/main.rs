@@ -39,7 +39,6 @@ use std::{
     io::{self, Read},
 };
 
-use crate::instructions::get_number_from_bits;
 use crate::instructions::Instructions;
 
 mod instructions;
