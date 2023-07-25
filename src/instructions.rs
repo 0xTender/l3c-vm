@@ -8,6 +8,7 @@ type Register = [Bit; 3];
 type Number = u16;
 const NUMBER_LENGTH: usize = 16;
 
+#[derive(Debug)]
 pub enum LoadType {
     Register {
         src_register: Register,
@@ -17,11 +18,14 @@ pub enum LoadType {
     },
 }
 
+#[derive(Debug)]
+
 pub enum JumpType {
     BaseRegister(Register),
     Return,
 }
 
+#[derive(Debug)]
 pub enum JumpRegisterType {
     FromOffset {
         p_co_offset_11_unextended: [Bit; 11],
@@ -32,7 +36,9 @@ pub enum JumpRegisterType {
 }
 
 /// OpCode is 16 bits long with last 4 bits storing op-code
+#[derive(Debug)]
 pub enum Instructions {
+    UnImplemented(u16),
     Branch {
         pc_offset_9_unextended: [Bit; 9],
         p: Bit, // 9
@@ -115,14 +121,14 @@ pub enum Instructions {
     },
 }
 
-fn get_number_from_bits(bit_slice: &[Bit]) -> Number {
+pub(crate) fn get_number_from_bits(bit_slice: &[Bit]) -> Number {
     assert!(
         bit_slice.len() <= NUMBER_LENGTH,
         "bit_slice must be NUMBER_LENGTH bits long"
     );
     let mut result: u16 = 0;
 
-    for (i, bit) in bit_slice.iter().rev().enumerate() {
+    for (i, bit) in bit_slice.iter().enumerate() {
         if *bit {
             result += 1 << i;
         }
@@ -130,12 +136,12 @@ fn get_number_from_bits(bit_slice: &[Bit]) -> Number {
     result
 }
 
+
 impl Instructions {
     // parse instruction
     pub fn parse_instruction(instruction_slice: &[Bit; 16]) -> Instructions {
         // get last 4 bits
         let op_code = get_number_from_bits(&instruction_slice[12..]);
-
         match op_code {
             0 => {
                 let p = instruction_slice[9];
@@ -161,6 +167,7 @@ impl Instructions {
                         },
                         true => LoadType::Immediate {
                             value_without_sign_extending: instruction_slice[0..5]
+                            
                                 .try_into()
                                 .unwrap(),
                         },
@@ -180,7 +187,10 @@ impl Instructions {
                 let type_check = instruction_slice[11];
                 match type_check {
                     true => Instructions::JumpRegister(JumpRegisterType::FromOffset {
-                        p_co_offset_11_unextended: instruction_slice[0..11].try_into().unwrap(),
+                        p_co_offset_11_unextended: instruction_slice[0..11]
+                            
+                            .try_into()
+                            .unwrap(),
                     }),
                     false => Instructions::JumpRegister(JumpRegisterType::FromRegister {
                         base_register: instruction_slice[6..9].try_into().unwrap(),
@@ -189,6 +199,7 @@ impl Instructions {
             }
             5 => {
                 let type_check = instruction_slice[5];
+
 
                 Instructions::And {
                     dest_register: instruction_slice[9..12].try_into().unwrap(),
@@ -199,6 +210,7 @@ impl Instructions {
                         },
                         true => LoadType::Immediate {
                             value_without_sign_extending: instruction_slice[0..5]
+                                
                                 .try_into()
                                 .unwrap(),
                         },
@@ -242,7 +254,7 @@ impl Instructions {
             15 => Instructions::Trap {
                 trap_vector: instruction_slice[0..8].try_into().unwrap(),
             },
-            8 | 13 => panic!("Unused op-codes {:x}", op_code),
+            8 | 13 => Instructions::UnImplemented(op_code),
             _ => panic!("Not implemented {:x}", op_code),
         }
     }

@@ -34,8 +34,48 @@
 //! FL_ZRO = 1 << 1, /* 0 */
 //! FL_NEG = 1 << 2, /* - */
 
+use std::{
+    fs::File,
+    io::{self, Read},
+};
+
+use crate::instructions::get_number_from_bits;
+use crate::instructions::Instructions;
+
 mod instructions;
 
-fn main() {
-    println!("Hello, world! {}", 1 << 16);
+fn main() -> io::Result<()> {
+    let file_name = "./resources/2048.obj";
+    let mut file = File::open(file_name).expect("File not found");
+
+    let mut buf: Vec<u8> = Vec::new();
+    file.read_to_end(&mut buf)?;
+
+    let mut iter = buf.chunks(2);
+    let pc_buffer = iter.next().unwrap();
+
+    let mut pc: usize = ((pc_buffer[0] as u16) << 8 | pc_buffer[1] as u16) as usize;
+
+    for elem in iter {
+        let instruction = (elem[0] as u16) << 8 | elem[1] as u16;
+
+        // convert instruction to array of bits
+        let mut instruction_bits = [false; 16];
+
+        let mut i = 0;
+        let mut n = instruction;
+        while n > 0 {
+            instruction_bits[i] = n % 2 == 1;
+            n = n / 2;
+            i += 1;
+        }
+
+        let instruction = Instructions::parse_instruction(&instruction_bits);
+
+        println!("{:?}", instruction);
+
+        pc = pc + 1;
+    }
+
+    Ok(())
 }
