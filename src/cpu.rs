@@ -1,5 +1,7 @@
+use std::io::Read;
+
 use crate::{
-    instructions::{Instructions, LoadType},
+    instructions::{Instructions, JumpType, LoadType},
     memory::Memory,
     register::{General, Registers, REGISTER_COUNT},
     trap::TrapType,
@@ -50,7 +52,7 @@ impl VmCPU {
         // let elem = self.memory.data[];
         let memory_location: u16 = self.read_register(Registers::ProgramCounter);
 
-        let elem = self.memory.data[memory_location as usize];
+        let elem = self.memory.read_memory(memory_location);
 
         let mut instruction_slice = [false; 16];
 
@@ -64,7 +66,6 @@ impl VmCPU {
 
         self.update_register(Registers::ProgramCounter, memory_location + 1);
         let i = Instructions::parse_instruction(&instruction_slice);
-        println!("\t\t{:} {:?}", memory_location, i);
         i
     }
 
@@ -98,12 +99,22 @@ impl VmCPU {
                     src_register,
                     add_type,
                 } => match add_type {
-                    LoadType::Register { src_register } => todo!(),
+                    LoadType::Register {
+                        src_register: src_register_2,
+                    } => {
+                        let operand1 = self.read_register(src_register.into());
+                        let operand2 = self.read_register(src_register_2.into());
+
+                        self.update_register(dest_register.into(), operand1.wrapping_add(operand2));
+
+                        self.update_flag(dest_register.into());
+                    }
                     LoadType::Immediate { value } => {
                         //
                         let operand = self.read_register(src_register.into());
 
-                        self.update_register(dest_register.into(), operand.wrapping_add(value))
+                        self.update_register(dest_register.into(), operand.wrapping_add(value));
+                        self.update_flag(dest_register.into());
                     }
                 },
                 Instructions::LoadDirect {
@@ -112,7 +123,8 @@ impl VmCPU {
                 } => {
                     let pc_value = self.read_register(Registers::ProgramCounter);
 
-                    let value = self.memory.data[(pc_value.wrapping_add(pc_offset_9)) as usize];
+                    let wrapping_add = pc_value.wrapping_add(pc_offset_9);
+                    let value = self.memory.read_memory(wrapping_add);
 
                     self.update_register(dest_register.into(), value);
 
@@ -121,7 +133,16 @@ impl VmCPU {
                 Instructions::StoreDirect {
                     pc_offset_9,
                     src_register,
-                } => todo!("StoreDirect"),
+                } => {
+                    let memory_location = self
+                        .read_register(Registers::ProgramCounter)
+                        .wrapping_add(pc_offset_9);
+
+                    self.memory.write_memory(
+                        memory_location as usize,
+                        self.read_register(src_register.into()),
+                    )
+                }
                 Instructions::JumpRegister(register_type) => {
                     match register_type {
                         crate::instructions::JumpRegisterType::FromOffset { pc_offset_11 } => {
@@ -154,9 +175,9 @@ impl VmCPU {
                         LoadType::Immediate { value } => {
                             self.update_register(dest_register.into(), base & value);
                             self.update_flag(dest_register.into())
-                        },
+                        }
                     }
-                },
+                }
                 Instructions::LoadRegister {
                     offset6,
                     base_register,
@@ -166,7 +187,7 @@ impl VmCPU {
                     let base = self.read_register(base_register.into());
                     let memory_location = base.wrapping_add(offset6);
 
-                    let value = self.memory.data[memory_location as usize];
+                    let value = self.memory.read_memory(memory_location);
 
                     self.update_register(dest_register.into(), value);
                     self.update_flag(dest_register.into());
@@ -179,31 +200,54 @@ impl VmCPU {
                     //
                     let base = self.read_register(base_register.into());
 
-                    self.memory.data[(base.wrapping_add(offset6)) as usize] =
-                        self.read_register(dest_register.into());
+                    self.memory.write_memory(
+                        base.wrapping_add(offset6) as usize,
+                        self.read_register(dest_register.into()),
+                    )
                 }
                 Instructions::Not {
                     dest_register,
                     src_register,
-                } => todo!("Not"),
+                } => {
+                    self.update_register(
+                        dest_register.into(),
+                        !self.read_register(src_register.into()),
+                    );
+                    self.update_flag(dest_register.into());
+                },
                 Instructions::LoadIndirect {
                     pc_offset_9,
                     dest_register,
                 } => {
                     //
-let pc_value=                    self.read_register(Registers::ProgramCounter);
-                    let indirect_memory_location = pc_value.wrapping_add(pc_offset_9) as usize;
-                    let direct_value = self.memory.data[self.memory.data[indirect_memory_location] as usize];
+                    let pc_value = self.read_register(Registers::ProgramCounter);
+                    let indirect_memory_location = pc_value.wrapping_add(pc_offset_9);
+                    let location = self.memory.read_memory(indirect_memory_location);
+                    let direct_value = self.memory.read_memory(location);
 
                     self.update_register(dest_register.into(), direct_value);
                     self.update_flag(dest_register);
-
-                },
+                }
                 Instructions::StoreIndirect {
                     pc_offset_9,
                     src_register,
-                } => todo!("StoreIndirect"),
-                Instructions::Jump(_) => todo!("Jump"),
+                } => {
+                    let pc_value = self.read_register(Registers::ProgramCounter);
+                    let indirect_memory_location = pc_value.wrapping_add(pc_offset_9);
+                    let location = self.memory.read_memory(indirect_memory_location);
+
+                    self.memory
+                        .write_memory(location as usize, self.read_register(src_register.into()));
+                }
+                Instructions::Jump(jump_type) => match jump_type {
+                    JumpType::BaseRegister(_) => todo!(),
+                    JumpType::Return => {
+                        self.update_register(
+                            Registers::ProgramCounter,
+                            self.read_register(Registers::GeneralRegister(General::R7)),
+                        );
+                    }
+                },
                 Instructions::LoadEffectiveAddress {
                     pc_offset_9,
                     dest_register,
@@ -229,7 +273,7 @@ let pc_value=                    self.read_register(Registers::ProgramCounter);
                         TrapType::Put => {
                             let mut memory_start =
                                 self.read_register(Registers::GeneralRegister(General::R0));
-                            let mut character = self.memory.data[memory_start as usize];
+                            let mut character = self.memory.read_memory(memory_start);
 
                             let mut from_u32 = std::char::from_u32(character as u32).unwrap();
 
@@ -239,7 +283,7 @@ let pc_value=                    self.read_register(Registers::ProgramCounter);
                                 chars.push(from_u32);
 
                                 memory_start = memory_start + 1;
-                                character = self.memory.data[memory_start as usize];
+                                character = self.memory.read_memory(memory_start);
 
                                 from_u32 = std::char::from_u32(character as u32).unwrap();
                             }
@@ -247,7 +291,25 @@ let pc_value=                    self.read_register(Registers::ProgramCounter);
                             let string: String = chars.into_iter().collect();
                             println!("{}", string);
                         }
-                        _ => todo!("Trap"),
+                        TrapType::Out => {
+                            let character = std::char::from_u32(
+                                self.read_register(Registers::GeneralRegister(General::R0)) as u32,
+                            )
+                            .unwrap();
+                            println!("{}", character);
+                        }
+                        TrapType::Get => {
+                            let mut buffer = [0 as u8; 1];
+                            std::io::stdin().read_exact(&mut buffer).unwrap();
+
+                            self.update_register(
+                                Registers::GeneralRegister(General::R0),
+                                buffer[0] as u16,
+                            );
+                            let register_index: usize = Registers::GeneralRegister(General::R0).into();
+                            self.update_flag(register_index as u16);
+                        }
+                        _ => todo!("Trap {:?}", trap),
                     }
                 }
             }

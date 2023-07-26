@@ -6,10 +6,13 @@ use std::{
 
 #[derive(Debug)]
 pub struct Memory {
-    pub data: [u16; 1 << 16],
+    data: [u16; 1 << 16],
     pub pc_start: usize,
     pub pc_end: usize,
 }
+
+const KEY_BOARD_STATUS: u16 = 0xFE00;
+const KEY_BOARD_DATA: u16 = 0xFE02;
 
 impl Memory {
     pub fn load_from_file<P: AsRef<Path>>(file_path: P) -> io::Result<Self> {
@@ -41,5 +44,25 @@ impl Memory {
             pc_start,
             pc_end,
         })
+    }
+
+    pub fn write_memory(&mut self, location: usize, value: u16) {
+        self.data[location] = value;
+    }
+
+    pub fn read_memory(&mut self, location: u16) -> u16 {
+        if location == KEY_BOARD_STATUS {
+            let mut buffer = [0; 1];
+            std::io::stdin().read_exact(&mut buffer).unwrap();
+            println!("Key pressed: {}", buffer[0] as char);
+
+            if buffer[0] != 0 {
+                self.data[KEY_BOARD_STATUS as usize] = 1 << 15;
+                self.data[KEY_BOARD_DATA as usize] = buffer[0] as u16;
+            } else {
+                self.data[KEY_BOARD_STATUS as usize] = 0;
+            }
+        }
+        return self.data[location as usize];
     }
 }

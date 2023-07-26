@@ -1,6 +1,5 @@
 #![allow(dead_code)]
 
-use crate::instructions::{get_number_from_bits, Bit};
 use std::io;
 
 pub const REGISTER_COUNT: usize = 10;

@@ -197,7 +197,7 @@ impl Instructions {
                 dest_register: get_number_from_bits(&instruction_slice[9..12]),
             },
             3 => Instructions::StoreDirect {
-                pc_offset_9: get_number_from_bits(&instruction_slice[0..9]),
+                pc_offset_9: sign_extend(get_number_from_bits(&instruction_slice[0..9]), 9),
                 src_register: get_number_from_bits(&instruction_slice[9..12]),
             },
             4 => {
@@ -217,7 +217,6 @@ impl Instructions {
             }
             5 => {
                 let type_check = instruction_slice[5];
-
                 Instructions::And {
                     dest_register: get_number_from_bits(&instruction_slice[9..12]),
                     src_register: get_number_from_bits(&instruction_slice[6..9]),
@@ -246,11 +245,11 @@ impl Instructions {
                 src_register: get_number_from_bits(&instruction_slice[6..9]),
             },
             10 => Instructions::LoadIndirect {
-                pc_offset_9: sign_extend( get_number_from_bits(&instruction_slice[0..9]),9),
+                pc_offset_9: sign_extend(get_number_from_bits(&instruction_slice[0..9]), 9),
                 dest_register: get_number_from_bits(&instruction_slice[9..12]),
             },
             11 => Instructions::StoreIndirect {
-                pc_offset_9: get_number_from_bits(&instruction_slice[0..9]),
+                pc_offset_9: sign_extend(get_number_from_bits(&instruction_slice[0..9]), 9),
                 src_register: get_number_from_bits(&instruction_slice[9..12]),
             },
             12 => {

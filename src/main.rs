@@ -45,7 +45,6 @@ mod register;
 mod trap;
 
 fn main() -> std::io::Result<()> {
-
     let file_name = "./resources/2048.obj";
     let memory = Memory::load_from_file(file_name)?;
 
