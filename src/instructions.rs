@@ -3,7 +3,7 @@
 use derivative::Derivative;
 
 // one bit
-type Bit = bool;
+pub type Bit = bool;
 // each register is 3 bits
 type Register = [Bit; 3];
 

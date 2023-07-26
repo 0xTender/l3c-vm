@@ -39,41 +39,29 @@ use std::{
     io::{self, Read},
 };
 
-use crate::instructions::Instructions;
+use crate::memory::Memory;
+
 
 mod instructions;
+mod register;
+mod memory;
+mod cpu;
 
 fn main() -> io::Result<()> {
     let file_name = "./resources/2048.obj";
-    let mut file = File::open(file_name).expect("File not found");
+    let memory = Memory::load_from_file(file_name)?;
 
-    let mut buf: Vec<u8> = Vec::new();
-    file.read_to_end(&mut buf)?;
 
-    let mut iter = buf.chunks(2);
-    let pc_buffer = iter.next().unwrap();
-
-    let mut pc: usize = ((pc_buffer[0] as u16) << 8 | pc_buffer[1] as u16) as usize;
-
-    for elem in iter {
-        let instruction = (elem[0] as u16) << 8 | elem[1] as u16;
-
-        // convert instruction to array of bits
+    for instruction in memory.memory[memory.pc_start..memory.pc_end].iter() {
         let mut instruction_bits = [false; 16];
 
         let mut i = 0;
-        let mut n = instruction;
+        let mut n = *instruction;
         while n > 0 {
             instruction_bits[i] = n % 2 == 1;
             n = n / 2;
             i += 1;
         }
-
-        let instruction = Instructions::parse_instruction(&instruction_bits);
-
-        println!("{:?}", instruction);
-
-        pc = pc + 1;
     }
 
     Ok(())

@@ -1,0 +1,846 @@
+LoadDirect { pc_offset_9: 20, dest_register: 6 }
+LoadEffectiveAddress { pc_offset_9: 21, dest_register: 5 }
+LoadEffectiveAddress { pc_offset_9: 125, dest_register: 0 }
+Trap { trap_vector: 34 }
+LoadEffectiveAddress { pc_offset_9: 35, dest_register: 0 }
+JumpRegister(FromOffset { p_co_offset_11: 718 })
+Branch { pc_offset_9: 1, p: 1, z: 0, n: 0 }
+StoreIndirect { pc_offset_9: 31, src_register: 0 }
+JumpRegister(FromOffset { p_co_offset_11: 154 })
+JumpRegister(FromOffset { p_co_offset_11: 475 })
+JumpRegister(FromOffset { p_co_offset_11: 167 })
+LoadDirect { pc_offset_9: 10, dest_register: 0 }
+Branch { pc_offset_9: 1, p: 1, z: 0, n: 0 }
+Branch { pc_offset_9: 507, p: 1, z: 1, n: 1 }
+JumpRegister(FromOffset { p_co_offset_11: 470 })
+LoadEffectiveAddress { pc_offset_9: 97, dest_register: 0 }
+Trap { trap_vector: 34 }
+LoadEffectiveAddress { pc_offset_9: 58, dest_register: 0 }
+JumpRegister(FromOffset { p_co_offset_11: 705 })
+Branch { pc_offset_9: 500, p: 1, z: 0, n: 0 }
+Trap { trap_vector: 37 }
+JumpRegister(FromRegister { base_register: 0 })
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 1, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 7, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 8, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 15, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 1, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 6, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 9, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 14, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 2, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 5, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 10, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 13, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 3, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 4, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 11, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 12, p: 0, z: 0, n: 0 }
+StoreDirect { pc_offset_9: 25, src_register: 1 }
+Branch { pc_offset_9: 65, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 114, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 101, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 121, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 111, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 117, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 111, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 110, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 97, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 110, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 65, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 78, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 83, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 73, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 116, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 101, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 114, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 109, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 105, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 110, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 97, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 108, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 40, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 121, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 47, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 110, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 41, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 63, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 87, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 111, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 117, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 108, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 100, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 121, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 111, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 117, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 108, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 105, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 107, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 101, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 116, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 111, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 112, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 108, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 97, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 121, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 97, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 103, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 97, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 105, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 110, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 40, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 121, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 47, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 110, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 41, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 63, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 10, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 89, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 111, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 117, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 108, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 111, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 115, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 116, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 58, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 40, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 10, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 10, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 67, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 111, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 110, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 116, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 114, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 111, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 108, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 116, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 104, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 101, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 103, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 97, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 109, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 101, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 117, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 115, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 105, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 110, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 103, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 87, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 65, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 83, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 68, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 107, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 101, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 121, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 115, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 46, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 10, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 31 } }
+And { dest_register: 0, src_register: 0, add_type: Immediate { value: 0 } }
+And { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+StoreDirect { pc_offset_9: 366, src_register: 0 }
+Add { dest_register: 2, src_register: 1, add_type: Register { src_register: 5 } }
+StoreRegister { offset6: 0, base_register: 2, dest_register: 0 }
+Add { dest_register: 1, src_register: 1, add_type: Immediate { value: 1 } }
+Add { dest_register: 2, src_register: 1, add_type: Immediate { value: 16 } }
+Branch { pc_offset_9: 507, p: 0, z: 0, n: 1 }
+JumpRegister(FromOffset { p_co_offset_11: 232 })
+JumpRegister(FromOffset { p_co_offset_11: 231 })
+LoadRegister { offset6: 0, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 1 } }
+Jump(Return)
+StoreRegister { offset6: 63, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 31 } }
+Trap { trap_vector: 32 }
+LoadDirect { pc_offset_9: 41, dest_register: 1 }
+Add { dest_register: 1, src_register: 0, add_type: Register { src_register: 1 } }
+Branch { pc_offset_9: 18, p: 0, z: 1, n: 0 }
+LoadDirect { pc_offset_9: 39, dest_register: 1 }
+Add { dest_register: 1, src_register: 0, add_type: Register { src_register: 1 } }
+Branch { pc_offset_9: 7, p: 0, z: 1, n: 0 }
+LoadDirect { pc_offset_9: 37, dest_register: 1 }
+Add { dest_register: 1, src_register: 0, add_type: Register { src_register: 1 } }
+Branch { pc_offset_9: 18, p: 0, z: 1, n: 0 }
+LoadDirect { pc_offset_9: 35, dest_register: 1 }
+Add { dest_register: 1, src_register: 0, add_type: Register { src_register: 1 } }
+Branch { pc_offset_9: 3, p: 0, z: 1, n: 0 }
+Branch { pc_offset_9: 498, p: 1, z: 1, n: 1 }
+JumpRegister(FromOffset { p_co_offset_11: 81 })
+Branch { pc_offset_9: 17, p: 1, z: 1, n: 1 }
+JumpRegister(FromOffset { p_co_offset_11: 30 })
+JumpRegister(FromOffset { p_co_offset_11: 29 })
+JumpRegister(FromOffset { p_co_offset_11: 77 })
+JumpRegister(FromOffset { p_co_offset_11: 27 })
+JumpRegister(FromOffset { p_co_offset_11: 26 })
+Branch { pc_offset_9: 11, p: 1, z: 1, n: 1 }
+JumpRegister(FromOffset { p_co_offset_11: 24 })
+JumpRegister(FromOffset { p_co_offset_11: 23 })
+JumpRegister(FromOffset { p_co_offset_11: 22 })
+JumpRegister(FromOffset { p_co_offset_11: 70 })
+JumpRegister(FromOffset { p_co_offset_11: 20 })
+Branch { pc_offset_9: 5, p: 1, z: 1, n: 1 }
+JumpRegister(FromOffset { p_co_offset_11: 18 })
+JumpRegister(FromOffset { p_co_offset_11: 66 })
+JumpRegister(FromOffset { p_co_offset_11: 16 })
+JumpRegister(FromOffset { p_co_offset_11: 15 })
+JumpRegister(FromOffset { p_co_offset_11: 14 })
+Add { dest_register: 0, src_register: 0, add_type: Immediate { value: 0 } }
+Branch { pc_offset_9: 477, p: 0, z: 1, n: 1 }
+JumpRegister(FromOffset { p_co_offset_11: 190 })
+Add { dest_register: 0, src_register: 0, add_type: Immediate { value: 0 } }
+Branch { pc_offset_9: 2, p: 1, z: 0, n: 0 }
+JumpRegister(FromOffset { p_co_offset_11: 220 })
+StoreDirect { pc_offset_9: 314, src_register: 0 }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 1 } }
+Jump(Return)
+Trap { trap_vector: 137 }
+Trap { trap_vector: 159 }
+Trap { trap_vector: 141 }
+Trap { trap_vector: 156 }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 0 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 31 } }
+LoadRegister { offset6: 1, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 0 }
+LoadRegister { offset6: 2, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 62, base_register: 6, dest_register: 0 }
+LoadRegister { offset6: 3, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 61, base_register: 6, dest_register: 0 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 29 } }
+LoadRegister { offset6: 0, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 3, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 4, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 2, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 8, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 1, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 12, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 0, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 13, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 4, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 14, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 8, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 15, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 12, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 11, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 13, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 7, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 14, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 0 }
+StoreRegister { offset6: 15, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 1, base_register: 6, dest_register: 0 }
+StoreRegister { offset6: 11, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 2, base_register: 6, dest_register: 0 }
+StoreRegister { offset6: 7, base_register: 5, dest_register: 0 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 3 } }
+LoadRegister { offset6: 6, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 0 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 31 } }
+LoadRegister { offset6: 5, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 6, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 9, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 5, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 10, base_register: 5, dest_register: 0 }
+StoreRegister { offset6: 9, base_register: 5, dest_register: 0 }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 0 }
+StoreRegister { offset6: 10, base_register: 5, dest_register: 0 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 1 } }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 0 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 1 } }
+Jump(Return)
+StoreRegister { offset6: 63, base_register: 6, dest_register: 7 }
+StoreRegister { offset6: 62, base_register: 6, dest_register: 1 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 30 } }
+And { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+Add { dest_register: 0, src_register: 5, add_type: Immediate { value: 0 } }
+JumpRegister(FromOffset { p_co_offset_11: 14 })
+Add { dest_register: 1, src_register: 0, add_type: Register { src_register: 1 } }
+Add { dest_register: 0, src_register: 5, add_type: Immediate { value: 4 } }
+JumpRegister(FromOffset { p_co_offset_11: 11 })
+Add { dest_register: 1, src_register: 0, add_type: Register { src_register: 1 } }
+Add { dest_register: 0, src_register: 5, add_type: Immediate { value: 8 } }
+JumpRegister(FromOffset { p_co_offset_11: 8 })
+Add { dest_register: 1, src_register: 0, add_type: Register { src_register: 1 } }
+Add { dest_register: 0, src_register: 5, add_type: Immediate { value: 12 } }
+JumpRegister(FromOffset { p_co_offset_11: 5 })
+Add { dest_register: 0, src_register: 0, add_type: Register { src_register: 1 } }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 1 }
+LoadRegister { offset6: 1, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 2 } }
+Jump(Return)
+StoreRegister { offset6: 63, base_register: 6, dest_register: 1 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 31 } }
+And { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+And { dest_register: 2, src_register: 2, add_type: Immediate { value: 0 } }
+LoadRegister { offset6: 0, base_register: 0, dest_register: 4 }
+Add { dest_register: 3, src_register: 4, add_type: Register { src_register: 4 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+LoadRegister { offset6: 1, base_register: 0, dest_register: 4 }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 4 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+LoadRegister { offset6: 2, base_register: 0, dest_register: 4 }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 4 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+LoadRegister { offset6: 3, base_register: 0, dest_register: 4 }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 4 } }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 3 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 31 } }
+Add { dest_register: 4, src_register: 0, add_type: Register { src_register: 1 } }
+LoadRegister { offset6: 0, base_register: 4, dest_register: 4 }
+Branch { pc_offset_9: 3, p: 0, z: 1, n: 1 }
+Add { dest_register: 3, src_register: 0, add_type: Register { src_register: 2 } }
+Add { dest_register: 2, src_register: 2, add_type: Immediate { value: 1 } }
+StoreRegister { offset6: 0, base_register: 3, dest_register: 4 }
+Add { dest_register: 1, src_register: 1, add_type: Immediate { value: 1 } }
+Add { dest_register: 4, src_register: 1, add_type: Immediate { value: 28 } }
+Branch { pc_offset_9: 503, p: 0, z: 0, n: 1 }
+And { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+Add { dest_register: 4, src_register: 2, add_type: Immediate { value: 28 } }
+Branch { pc_offset_9: 4, p: 0, z: 1, n: 0 }
+Add { dest_register: 3, src_register: 0, add_type: Register { src_register: 2 } }
+Add { dest_register: 2, src_register: 2, add_type: Immediate { value: 1 } }
+StoreRegister { offset6: 0, base_register: 3, dest_register: 1 }
+Branch { pc_offset_9: 506, p: 1, z: 1, n: 1 }
+LoadRegister { offset6: 0, base_register: 0, dest_register: 1 }
+LoadRegister { offset6: 1, base_register: 0, dest_register: 3 }
+Branch { pc_offset_9: 37, p: 0, z: 1, n: 0 }
+Not { dest_register: 3, src_register: 3 }
+Add { dest_register: 3, src_register: 3, add_type: Immediate { value: 1 } }
+Add { dest_register: 3, src_register: 1, add_type: Register { src_register: 3 } }
+Branch { pc_offset_9: 8, p: 1, z: 0, n: 1 }
+Add { dest_register: 1, src_register: 1, add_type: Immediate { value: 1 } }
+StoreRegister { offset6: 0, base_register: 0, dest_register: 1 }
+LoadRegister { offset6: 2, base_register: 0, dest_register: 1 }
+StoreRegister { offset6: 1, base_register: 0, dest_register: 1 }
+LoadRegister { offset6: 3, base_register: 0, dest_register: 1 }
+StoreRegister { offset6: 2, base_register: 0, dest_register: 1 }
+And { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+StoreRegister { offset6: 3, base_register: 0, dest_register: 1 }
+LoadRegister { offset6: 1, base_register: 0, dest_register: 1 }
+LoadRegister { offset6: 2, base_register: 0, dest_register: 3 }
+Branch { pc_offset_9: 22, p: 0, z: 1, n: 0 }
+Not { dest_register: 3, src_register: 3 }
+Add { dest_register: 3, src_register: 3, add_type: Immediate { value: 1 } }
+Add { dest_register: 3, src_register: 1, add_type: Register { src_register: 3 } }
+Branch { pc_offset_9: 7, p: 1, z: 0, n: 1 }
+Add { dest_register: 1, src_register: 1, add_type: Immediate { value: 1 } }
+StoreRegister { offset6: 1, base_register: 0, dest_register: 1 }
+LoadRegister { offset6: 3, base_register: 0, dest_register: 1 }
+StoreRegister { offset6: 2, base_register: 0, dest_register: 1 }
+And { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+StoreRegister { offset6: 3, base_register: 0, dest_register: 1 }
+Branch { pc_offset_9: 11, p: 1, z: 1, n: 1 }
+LoadRegister { offset6: 2, base_register: 0, dest_register: 1 }
+LoadRegister { offset6: 3, base_register: 0, dest_register: 3 }
+Branch { pc_offset_9: 8, p: 0, z: 1, n: 0 }
+Not { dest_register: 3, src_register: 3 }
+Add { dest_register: 3, src_register: 3, add_type: Immediate { value: 1 } }
+Add { dest_register: 3, src_register: 1, add_type: Register { src_register: 3 } }
+Branch { pc_offset_9: 4, p: 1, z: 0, n: 1 }
+Add { dest_register: 1, src_register: 1, add_type: Immediate { value: 1 } }
+StoreRegister { offset6: 2, base_register: 0, dest_register: 1 }
+And { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+StoreRegister { offset6: 3, base_register: 0, dest_register: 1 }
+LoadRegister { offset6: 0, base_register: 0, dest_register: 4 }
+Add { dest_register: 3, src_register: 4, add_type: Register { src_register: 4 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+LoadRegister { offset6: 1, base_register: 0, dest_register: 4 }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 4 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+LoadRegister { offset6: 2, base_register: 0, dest_register: 4 }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 4 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+LoadRegister { offset6: 3, base_register: 0, dest_register: 4 }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 4 } }
+Not { dest_register: 3, src_register: 3 }
+Add { dest_register: 3, src_register: 3, add_type: Immediate { value: 1 } }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 4 }
+And { dest_register: 0, src_register: 0, add_type: Immediate { value: 0 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 4 } }
+Branch { pc_offset_9: 1, p: 0, z: 1, n: 0 }
+Add { dest_register: 0, src_register: 0, add_type: Immediate { value: 1 } }
+LoadRegister { offset6: 1, base_register: 6, dest_register: 1 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 2 } }
+Jump(Return)
+StoreRegister { offset6: 63, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 31 } }
+And { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+And { dest_register: 2, src_register: 2, add_type: Immediate { value: 0 } }
+Add { dest_register: 0, src_register: 2, add_type: Register { src_register: 5 } }
+Add { dest_register: 2, src_register: 2, add_type: Immediate { value: 1 } }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 0 }
+LoadRegister { offset6: 0, base_register: 0, dest_register: 0 }
+Branch { pc_offset_9: 2, p: 1, z: 0, n: 0 }
+Add { dest_register: 1, src_register: 1, add_type: Immediate { value: 1 } }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 31 } }
+Add { dest_register: 0, src_register: 2, add_type: Immediate { value: 16 } }
+Branch { pc_offset_9: 503, p: 0, z: 0, n: 1 }
+Add { dest_register: 0, src_register: 1, add_type: Immediate { value: 0 } }
+Branch { pc_offset_9: 13, p: 0, z: 1, n: 0 }
+JumpRegister(FromOffset { p_co_offset_11: 279 })
+Add { dest_register: 2, src_register: 0, add_type: Register { src_register: 6 } }
+LoadDirect { pc_offset_9: 14, dest_register: 0 }
+JumpRegister(FromOffset { p_co_offset_11: 276 })
+Add { dest_register: 0, src_register: 0, add_type: Immediate { value: 0 } }
+Branch { pc_offset_9: 3, p: 0, z: 1, n: 0 }
+And { dest_register: 0, src_register: 0, add_type: Immediate { value: 0 } }
+Add { dest_register: 0, src_register: 0, add_type: Immediate { value: 1 } }
+Branch { pc_offset_9: 1, p: 1, z: 1, n: 1 }
+Add { dest_register: 0, src_register: 0, add_type: Immediate { value: 2 } }
+LoadRegister { offset6: 0, base_register: 2, dest_register: 2 }
+StoreRegister { offset6: 0, base_register: 2, dest_register: 0 }
+Add { dest_register: 0, src_register: 1, add_type: Immediate { value: 31 } }
+Add { dest_register: 6, src_register: 6, add_type: Register { src_register: 1 } }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 1 } }
+Jump(Return)
+Branch { pc_offset_9: 11, p: 0, z: 0, n: 0 }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 31 } }
+And { dest_register: 4, src_register: 4, add_type: Immediate { value: 0 } }
+Add { dest_register: 4, src_register: 4, add_type: Immediate { value: 1 } }
+Add { dest_register: 0, src_register: 5, add_type: Immediate { value: 0 } }
+JumpRegister(FromOffset { p_co_offset_11: 23 })
+Branch { pc_offset_9: 13, p: 0, z: 1, n: 0 }
+Add { dest_register: 0, src_register: 5, add_type: Immediate { value: 4 } }
+JumpRegister(FromOffset { p_co_offset_11: 20 })
+Branch { pc_offset_9: 10, p: 0, z: 1, n: 0 }
+Add { dest_register: 0, src_register: 5, add_type: Immediate { value: 8 } }
+JumpRegister(FromOffset { p_co_offset_11: 17 })
+Branch { pc_offset_9: 7, p: 0, z: 1, n: 0 }
+Add { dest_register: 0, src_register: 5, add_type: Immediate { value: 12 } }
+JumpRegister(FromOffset { p_co_offset_11: 14 })
+Branch { pc_offset_9: 4, p: 0, z: 1, n: 0 }
+Add { dest_register: 4, src_register: 4, add_type: Immediate { value: 31 } }
+Branch { pc_offset_9: 2, p: 0, z: 0, n: 1 }
+JumpRegister(FromOffset { p_co_offset_11: 1817 })
+Branch { pc_offset_9: 496, p: 1, z: 1, n: 1 }
+Add { dest_register: 4, src_register: 4, add_type: Immediate { value: 0 } }
+Branch { pc_offset_9: 3, p: 1, z: 0, n: 0 }
+JumpRegister(FromOffset { p_co_offset_11: 1813 })
+JumpRegister(FromOffset { p_co_offset_11: 1812 })
+JumpRegister(FromOffset { p_co_offset_11: 1811 })
+LoadRegister { offset6: 0, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 1 } }
+Add { dest_register: 0, src_register: 1, add_type: Immediate { value: 0 } }
+Jump(Return)
+LoadRegister { offset6: 0, base_register: 0, dest_register: 2 }
+LoadRegister { offset6: 1, base_register: 0, dest_register: 3 }
+Not { dest_register: 3, src_register: 3 }
+Add { dest_register: 3, src_register: 3, add_type: Immediate { value: 1 } }
+Add { dest_register: 1, src_register: 2, add_type: Register { src_register: 3 } }
+Branch { pc_offset_9: 10, p: 0, z: 1, n: 0 }
+LoadRegister { offset6: 2, base_register: 0, dest_register: 2 }
+Add { dest_register: 1, src_register: 2, add_type: Register { src_register: 3 } }
+Branch { pc_offset_9: 7, p: 0, z: 1, n: 0 }
+LoadRegister { offset6: 3, base_register: 0, dest_register: 3 }
+Not { dest_register: 3, src_register: 3 }
+Add { dest_register: 3, src_register: 3, add_type: Immediate { value: 1 } }
+Add { dest_register: 1, src_register: 2, add_type: Register { src_register: 3 } }
+Branch { pc_offset_9: 2, p: 0, z: 1, n: 0 }
+And { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+Add { dest_register: 1, src_register: 1, add_type: Immediate { value: 1 } }
+Jump(Return)
+StoreRegister { offset6: 63, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 31 } }
+LoadEffectiveAddress { pc_offset_9: 49, dest_register: 0 }
+Trap { trap_vector: 34 }
+LoadEffectiveAddress { pc_offset_9: 126, dest_register: 1 }
+And { dest_register: 2, src_register: 2, add_type: Immediate { value: 0 } }
+LoadEffectiveAddress { pc_offset_9: 57, dest_register: 0 }
+Trap { trap_vector: 34 }
+LoadDirect { pc_offset_9: 121, dest_register: 0 }
+Trap { trap_vector: 33 }
+LoadEffectiveAddress { pc_offset_9: 82, dest_register: 0 }
+Trap { trap_vector: 34 }
+LoadDirect { pc_offset_9: 117, dest_register: 0 }
+Trap { trap_vector: 33 }
+LoadEffectiveAddress { pc_offset_9: 107, dest_register: 0 }
+Trap { trap_vector: 34 }
+LoadDirect { pc_offset_9: 112, dest_register: 0 }
+Trap { trap_vector: 33 }
+Add { dest_register: 3, src_register: 5, add_type: Register { src_register: 2 } }
+LoadRegister { offset6: 0, base_register: 3, dest_register: 3 }
+Add { dest_register: 2, src_register: 2, add_type: Immediate { value: 1 } }
+Add { dest_register: 0, src_register: 3, add_type: Register { src_register: 3 } }
+Add { dest_register: 0, src_register: 0, add_type: Register { src_register: 0 } }
+Add { dest_register: 0, src_register: 0, add_type: Register { src_register: 3 } }
+Add { dest_register: 0, src_register: 0, add_type: Register { src_register: 1 } }
+Trap { trap_vector: 34 }
+LoadDirect { pc_offset_9: 102, dest_register: 0 }
+Trap { trap_vector: 33 }
+Add { dest_register: 0, src_register: 2, add_type: Immediate { value: 28 } }
+Branch { pc_offset_9: 7, p: 0, z: 1, n: 0 }
+Add { dest_register: 0, src_register: 2, add_type: Immediate { value: 24 } }
+Branch { pc_offset_9: 5, p: 0, z: 1, n: 0 }
+Add { dest_register: 0, src_register: 2, add_type: Immediate { value: 20 } }
+Branch { pc_offset_9: 3, p: 0, z: 1, n: 0 }
+Add { dest_register: 0, src_register: 2, add_type: Immediate { value: 16 } }
+Branch { pc_offset_9: 1, p: 0, z: 1, n: 0 }
+Branch { pc_offset_9: 491, p: 1, z: 0, n: 1 }
+LoadEffectiveAddress { pc_offset_9: 87, dest_register: 0 }
+Trap { trap_vector: 34 }
+Add { dest_register: 0, src_register: 2, add_type: Immediate { value: 16 } }
+Branch { pc_offset_9: 481, p: 1, z: 0, n: 1 }
+LoadEffectiveAddress { pc_offset_9: 51, dest_register: 0 }
+Trap { trap_vector: 34 }
+LoadDirect { pc_offset_9: 86, dest_register: 0 }
+Trap { trap_vector: 33 }
+LoadEffectiveAddress { pc_offset_9: 18, dest_register: 0 }
+Trap { trap_vector: 34 }
+LoadDirect { pc_offset_9: 82, dest_register: 0 }
+Trap { trap_vector: 33 }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 1 } }
+Jump(Return)
+Branch { pc_offset_9: 27, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 91, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 74, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 27, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 91, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 72, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 27, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 91, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 51, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 74, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 43, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 45, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 43, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 124, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 124, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 124, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 124, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 10, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 10, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 52, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 56, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 49, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 54, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 51, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 54, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 52, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 49, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 56, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 53, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 54, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 53, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 49, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 49, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 48, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 52, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 48, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 52, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 56, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 52, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 48, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 57, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 54, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 56, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 49, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 57, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 94, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 49, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 52, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 94, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 49, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 53, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 50, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 94, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 49, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 54, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 0 }
+StoreRegister { offset6: 62, base_register: 6, dest_register: 1 }
+StoreRegister { offset6: 61, base_register: 6, dest_register: 2 }
+StoreRegister { offset6: 60, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 28 } }
+LoadDirect { pc_offset_9: 13, dest_register: 0 }
+LoadDirect { pc_offset_9: 15, dest_register: 1 }
+JumpRegister(FromOffset { p_co_offset_11: 91 })
+LoadDirect { pc_offset_9: 11, dest_register: 1 }
+JumpRegister(FromOffset { p_co_offset_11: 109 })
+StoreDirect { pc_offset_9: 8, src_register: 0 }
+LoadRegister { offset6: 3, base_register: 6, dest_register: 1 }
+JumpRegister(FromOffset { p_co_offset_11: 86 })
+LoadRegister { offset6: 0, base_register: 6, dest_register: 7 }
+LoadRegister { offset6: 1, base_register: 6, dest_register: 2 }
+LoadRegister { offset6: 2, base_register: 6, dest_register: 1 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 4 } }
+Jump(Return)
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Jump(BaseRegister(0))
+Branch { pc_offset_9: 7, p: 0, z: 0, n: 0 }
+StoreRegister { offset6: 63, base_register: 7, dest_register: 7 }
+Add { dest_register: 1, src_register: 1, add_type: Register { src_register: 1 } }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 0 }
+StoreRegister { offset6: 62, base_register: 6, dest_register: 1 }
+StoreRegister { offset6: 61, base_register: 6, dest_register: 7 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 29 } }
+LoadRegister { offset6: 2, base_register: 6, dest_register: 0 }
+Trap { trap_vector: 34 }
+JumpRegister(FromOffset { p_co_offset_11: 52 })
+Trap { trap_vector: 33 }
+Add { dest_register: 1, src_register: 0, add_type: Immediate { value: 0 } }
+LoadDirect { pc_offset_9: 48, dest_register: 0 }
+Trap { trap_vector: 33 }
+LoadDirect { pc_offset_9: 44, dest_register: 0 }
+Add { dest_register: 0, src_register: 0, add_type: Register { src_register: 1 } }
+Branch { pc_offset_9: 10, p: 0, z: 1, n: 0 }
+LoadDirect { pc_offset_9: 42, dest_register: 0 }
+Add { dest_register: 0, src_register: 0, add_type: Register { src_register: 1 } }
+Branch { pc_offset_9: 5, p: 0, z: 1, n: 0 }
+Add { dest_register: 0, src_register: 1, add_type: Immediate { value: 0 } }
+Trap { trap_vector: 33 }
+LoadEffectiveAddress { pc_offset_9: 11, dest_register: 0 }
+Trap { trap_vector: 34 }
+Branch { pc_offset_9: 494, p: 1, z: 1, n: 1 }
+And { dest_register: 0, src_register: 0, add_type: Immediate { value: 0 } }
+Branch { pc_offset_9: 2, p: 1, z: 1, n: 1 }
+And { dest_register: 0, src_register: 0, add_type: Immediate { value: 0 } }
+Add { dest_register: 0, src_register: 0, add_type: Immediate { value: 1 } }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 7 }
+LoadRegister { offset6: 1, base_register: 6, dest_register: 1 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 3 } }
+Add { dest_register: 0, src_register: 0, add_type: Immediate { value: 0 } }
+Jump(Return)
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 105, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 115, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 110, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 111, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 116, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 97, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 118, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 97, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 108, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 105, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 100, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 32, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 105, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 110, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 112, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 117, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 116, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 46, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 10, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 10, p: 0, z: 0, n: 0 }
+Branch { pc_offset_9: 0, p: 0, z: 0, n: 0 }
+Trap { trap_vector: 135 }
+Trap { trap_vector: 146 }
+Branch { pc_offset_9: 10, p: 0, z: 0, n: 0 }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 1 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 31 } }
+And { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+Add { dest_register: 1, src_register: 1, add_type: Immediate { value: 1 } }
+LoadIndirect { pc_offset_9: 9, dest_register: 0 }
+Branch { pc_offset_9: 509, p: 1, z: 1, n: 0 }
+LoadDirect { pc_offset_9: 9, dest_register: 0 }
+And { dest_register: 1, src_register: 1, add_type: Register { src_register: 0 } }
+LoadIndirect { pc_offset_9: 6, dest_register: 0 }
+StoreDirect { pc_offset_9: 439, src_register: 1 }
+StoreDirect { pc_offset_9: 437, src_register: 1 }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 1 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 1 } }
+Jump(Return)
+Trap { trap_vector: 0 }
+Trap { trap_vector: 2 }
+StoreRegister { offset6: 63, base_register: 7, dest_register: 7 }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 1 }
+StoreRegister { offset6: 62, base_register: 6, dest_register: 2 }
+StoreRegister { offset6: 61, base_register: 6, dest_register: 3 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 29 } }
+Not { dest_register: 2, src_register: 1 }
+Add { dest_register: 2, src_register: 2, add_type: Immediate { value: 1 } }
+Branch { pc_offset_9: 12, p: 0, z: 1, n: 0 }
+And { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+Add { dest_register: 1, src_register: 1, add_type: Immediate { value: 1 } }
+Add { dest_register: 0, src_register: 0, add_type: Register { src_register: 2 } }
+Branch { pc_offset_9: 509, p: 1, z: 0, n: 0 }
+Branch { pc_offset_9: 3, p: 0, z: 1, n: 0 }
+LoadRegister { offset6: 2, base_register: 6, dest_register: 2 }
+Add { dest_register: 1, src_register: 1, add_type: Immediate { value: 31 } }
+Add { dest_register: 0, src_register: 0, add_type: Register { src_register: 2 } }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 3 }
+LoadRegister { offset6: 1, base_register: 6, dest_register: 2 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 3 } }
+Jump(Return)
+Trap { trap_vector: 37 }
+Add { dest_register: 0, src_register: 0, add_type: Immediate { value: 0 } }
+Branch { pc_offset_9: 22, p: 0, z: 1, n: 0 }
+Add { dest_register: 1, src_register: 1, add_type: Immediate { value: 0 } }
+Branch { pc_offset_9: 20, p: 0, z: 1, n: 0 }
+StoreRegister { offset6: 63, base_register: 6, dest_register: 1 }
+StoreRegister { offset6: 62, base_register: 6, dest_register: 2 }
+StoreRegister { offset6: 61, base_register: 6, dest_register: 3 }
+StoreRegister { offset6: 60, base_register: 6, dest_register: 4 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 28 } }
+And { dest_register: 2, src_register: 2, add_type: Immediate { value: 0 } }
+Add { dest_register: 3, src_register: 2, add_type: Immediate { value: 1 } }
+And { dest_register: 4, src_register: 0, add_type: Register { src_register: 3 } }
+Branch { pc_offset_9: 1, p: 0, z: 1, n: 1 }
+Add { dest_register: 2, src_register: 2, add_type: Register { src_register: 1 } }
+Add { dest_register: 1, src_register: 1, add_type: Register { src_register: 1 } }
+Add { dest_register: 3, src_register: 3, add_type: Register { src_register: 3 } }
+Branch { pc_offset_9: 506, p: 1, z: 0, n: 0 }
+Add { dest_register: 0, src_register: 2, add_type: Immediate { value: 0 } }
+LoadRegister { offset6: 0, base_register: 6, dest_register: 4 }
+LoadRegister { offset6: 1, base_register: 6, dest_register: 3 }
+LoadRegister { offset6: 2, base_register: 6, dest_register: 2 }
+LoadRegister { offset6: 3, base_register: 6, dest_register: 1 }
+Add { dest_register: 6, src_register: 6, add_type: Immediate { value: 4 } }
+Jump(Return)
+And { dest_register: 0, src_register: 0, add_type: Immediate { value: 0 } }
+Jump(Return)
