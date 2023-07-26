@@ -34,35 +34,24 @@
 //! FL_ZRO = 1 << 1, /* 0 */
 //! FL_NEG = 1 << 2, /* - */
 
-use std::{
-    fs::File,
-    io::{self, Read},
-};
+use cpu::VmCPU;
 
 use crate::memory::Memory;
 
-
-mod instructions;
-mod register;
-mod memory;
 mod cpu;
+mod instructions;
+mod memory;
+mod register;
+mod trap;
 
-fn main() -> io::Result<()> {
+fn main() -> std::io::Result<()> {
+
     let file_name = "./resources/2048.obj";
     let memory = Memory::load_from_file(file_name)?;
 
+    let mut vm = VmCPU::new([0; 10], memory);
 
-    for instruction in memory.memory[memory.pc_start..memory.pc_end].iter() {
-        let mut instruction_bits = [false; 16];
-
-        let mut i = 0;
-        let mut n = *instruction;
-        while n > 0 {
-            instruction_bits[i] = n % 2 == 1;
-            n = n / 2;
-            i += 1;
-        }
-    }
+    vm.execute();
 
     Ok(())
 }

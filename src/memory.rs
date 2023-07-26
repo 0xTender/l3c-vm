@@ -1,8 +1,12 @@
-use std::{path::Path, fs::File, io::{Read, self}};
+use std::{
+    fs::File,
+    io::{self, Read},
+    path::Path,
+};
 
 #[derive(Debug)]
 pub struct Memory {
-    pub memory: [u16; 1 << 16],
+    pub data: [u16; 1 << 16],
     pub pc_start: usize,
     pub pc_end: usize,
 }
@@ -24,19 +28,18 @@ impl Memory {
 
         for elem in iter {
             let instruction = (elem[0] as u16) << 8 | elem[1] as u16;
-    
+
             memory[pc] = instruction;
-    
+
             pc = pc + 1;
         }
 
         let pc_end = pc;
-    
 
         Ok(Self {
-            memory,
+            data: memory,
             pc_start,
-            pc_end
+            pc_end,
         })
     }
 }

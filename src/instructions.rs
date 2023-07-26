@@ -1,14 +1,19 @@
 #![allow(dead_code)]
 
-use derivative::Derivative;
-
 // one bit
 pub type Bit = bool;
 // each register is 3 bits
-type Register = [Bit; 3];
+type Register = u16;
 
 type Number = u16;
 const NUMBER_LENGTH: usize = 16;
+
+fn sign_extend(mut x: Number, bit_count: usize) -> Number {
+    if ((x >> (bit_count - 1)) & 1) == 1 {
+        x |= 0xFFFF << bit_count;
+    }
+    return x;
+}
 
 pub(crate) fn get_number_from_bits(bit_slice: &[Bit]) -> Number {
     assert!(
@@ -37,63 +42,40 @@ fn print_bit(val: &bool, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
     }
 }
 
-#[derive(Derivative)]
-#[derivative(Debug)]
+#[derive(Debug, Clone)]
 pub enum LoadType {
-    Register { 
-        #[derivative(Debug(format_with = "print_bits"))]
-        src_register: Register },
-    Immediate { 
-        #[derivative(Debug(format_with = "print_bits"))]
-        value: [Bit; 5] },
+    Register { src_register: Register },
+    Immediate { value: u16 },
 }
 
-#[derive(Derivative)]
-#[derivative(Debug)]
+#[derive(Debug, Clone)]
 
 pub enum JumpType {
-
-    BaseRegister(
-        #[derivative(Debug(format_with = "print_bits"))]
-        Register
-    ),
+    BaseRegister(Register),
     Return,
 }
 
-#[derive(Derivative)]
-#[derivative(Debug)]
+#[derive(Debug, Clone)]
 pub enum JumpRegisterType {
-    FromOffset {
-        #[derivative(Debug(format_with = "print_bits"))]
-        p_co_offset_11: [Bit; 11],
-    },
-    FromRegister {
-        #[derivative(Debug(format_with = "print_bits"))]
-        base_register: Register,
-    },
+    FromOffset { pc_offset_11: u16 },
+    FromRegister { base_register: Register },
 }
 
-/// OpCode is 16 bits long with last 4 bits storing op-code
-#[derive(Derivative)]
-#[derivative(Debug)]
+/// OpCode is 16 bits
+/// long with last 4 bits storing op-code
+#[derive(Debug, Clone)]
 pub enum Instructions {
     UnImplemented(u16),
     Branch {
-        #[derivative(Debug(format_with = "print_bits"))]
-        pc_offset_9: [Bit; 9],
-        #[derivative(Debug(format_with = "print_bit"))]
+        pc_offset_9: u16,
         p: Bit, // 9
-        #[derivative(Debug(format_with = "print_bit"))]
         z: Bit, // 10
-        #[derivative(Debug(format_with = "print_bit"))]
         n: Bit, // 11
     },
     Add {
-        #[derivative(Debug(format_with = "print_bits"))]
         /// store result of addition
         dest_register: Register,
         /// first operand
-        #[derivative(Debug(format_with = "print_bits"))]
         src_register: Register,
         /// 5th bit from right is 1 for immediate value
         /// 0 for second source register
@@ -101,26 +83,22 @@ pub enum Instructions {
     },
     // LD
     LoadDirect {
-        #[derivative(Debug(format_with = "print_bits"))]
-        pc_offset_9: [Bit; 9],
-        #[derivative(Debug(format_with = "print_bits"))]
+        pc_offset_9: u16,
+
         dest_register: Register,
     },
     // ST
     StoreDirect {
-        #[derivative(Debug(format_with = "print_bits"))]
-        pc_offset_9: [Bit; 9],
-        #[derivative(Debug(format_with = "print_bits"))]
+        pc_offset_9: u16,
+
         src_register: Register,
     },
     // JSR | JSRR
     JumpRegister(JumpRegisterType),
     And {
         /// store result of addition
-        #[derivative(Debug(format_with = "print_bits"))]
         dest_register: Register,
         /// first operand
-        #[derivative(Debug(format_with = "print_bits"))]
         src_register: Register,
         /// 5th bit from right is 1 for immediate value
         /// 0 for second source register
@@ -128,27 +106,24 @@ pub enum Instructions {
     },
     // LDR
     LoadRegister {
-        #[derivative(Debug(format_with = "print_bits"))]
-        offset6: [Bit; 6],
-        #[derivative(Debug(format_with = "print_bits"))]
+        offset6: u16,
+
         base_register: Register,
-        #[derivative(Debug(format_with = "print_bits"))]
+
         dest_register: Register,
     },
     // STR
     StoreRegister {
-        #[derivative(Debug(format_with = "print_bits"))]
-        offset6: [Bit; 6],
-        #[derivative(Debug(format_with = "print_bits"))]
+        offset6: u16,
+
         base_register: Register,
-        #[derivative(Debug(format_with = "print_bits"))]
-        dest_register: Register,
+
+        src_register: Register,
     },
     // NOT
     Not {
-        #[derivative(Debug(format_with = "print_bits"))]
         dest_register: Register,
-        #[derivative(Debug(format_with = "print_bits"))]
+
         src_register: Register,
     },
     // LDI
@@ -156,9 +131,8 @@ pub enum Instructions {
         // An address is computed by sign-extending bits [8:0] to
         // 16 bits and adding
         // this value to the incremented PC.
-        #[derivative(Debug(format_with = "print_bits"))]
-        pc_offset_9: [Bit; 9],
-        #[derivative(Debug(format_with = "print_bits"))]
+        pc_offset_9: u16,
+
         dest_register: Register,
     },
     // STI
@@ -166,24 +140,21 @@ pub enum Instructions {
         // An address is computed by sign-extending bits [8:0] to
         // 16 bits and adding
         // this value to the incremented PC.
-        #[derivative(Debug(format_with = "print_bits"))]
-        pc_offset_9: [Bit; 9],
-        #[derivative(Debug(format_with = "print_bits"))]
+        pc_offset_9: u16,
+
         src_register: Register,
     },
     // JMP | RET
     Jump(JumpType),
     // LEA
     LoadEffectiveAddress {
-        #[derivative(Debug(format_with = "print_bits"))]
-        pc_offset_9: [Bit; 9],
-        #[derivative(Debug(format_with = "print_bits"))]
+        pc_offset_9: u16,
+
         dest_register: Register,
     },
     // TRAP
     Trap {
-        #[derivative(Debug(format_with = "print_bits"))]
-        trap_vector: [Bit; 8],
+        trap_vector: u16,
     },
 }
 
@@ -199,7 +170,7 @@ impl Instructions {
                 let n = instruction_slice[11];
 
                 Instructions::Branch {
-                    pc_offset_9: instruction_slice[0..9].try_into().unwrap(),
+                    pc_offset_9: get_number_from_bits(&instruction_slice[0..9]),
                     p,
                     z,
                     n,
@@ -209,35 +180,38 @@ impl Instructions {
                 let type_check = instruction_slice[5];
 
                 Instructions::Add {
-                    dest_register: instruction_slice[9..12].try_into().unwrap(),
-                    src_register: instruction_slice[6..9].try_into().unwrap(),
+                    dest_register: get_number_from_bits(&instruction_slice[9..12]),
+                    src_register: get_number_from_bits(&instruction_slice[6..9]),
                     add_type: match type_check {
                         false => LoadType::Register {
-                            src_register: instruction_slice[0..3].try_into().unwrap(),
+                            src_register: get_number_from_bits(&instruction_slice[0..3]),
                         },
                         true => LoadType::Immediate {
-                            value: instruction_slice[0..5].try_into().unwrap(),
+                            value: sign_extend(get_number_from_bits(&instruction_slice[0..5]), 5),
                         },
                     },
                 }
             }
             2 => Instructions::LoadDirect {
-                pc_offset_9: instruction_slice[0..9].try_into().unwrap(),
-                dest_register: instruction_slice[9..12].try_into().unwrap(),
+                pc_offset_9: sign_extend(get_number_from_bits(&instruction_slice[0..9]), 9),
+                dest_register: get_number_from_bits(&instruction_slice[9..12]),
             },
             3 => Instructions::StoreDirect {
-                pc_offset_9: instruction_slice[0..9].try_into().unwrap(),
-                src_register: instruction_slice[9..12].try_into().unwrap(),
+                pc_offset_9: get_number_from_bits(&instruction_slice[0..9]),
+                src_register: get_number_from_bits(&instruction_slice[9..12]),
             },
             4 => {
                 //
                 let type_check = instruction_slice[11];
                 match type_check {
                     true => Instructions::JumpRegister(JumpRegisterType::FromOffset {
-                        p_co_offset_11: instruction_slice[0..11].try_into().unwrap(),
+                        pc_offset_11: sign_extend(
+                            get_number_from_bits(&instruction_slice[0..11]),
+                            11,
+                        ),
                     }),
                     false => Instructions::JumpRegister(JumpRegisterType::FromRegister {
-                        base_register: instruction_slice[6..9].try_into().unwrap(),
+                        base_register: get_number_from_bits(&instruction_slice[6..9]),
                     }),
                 }
             }
@@ -245,54 +219,55 @@ impl Instructions {
                 let type_check = instruction_slice[5];
 
                 Instructions::And {
-                    dest_register: instruction_slice[9..12].try_into().unwrap(),
-                    src_register: instruction_slice[6..9].try_into().unwrap(),
+                    dest_register: get_number_from_bits(&instruction_slice[9..12]),
+                    src_register: get_number_from_bits(&instruction_slice[6..9]),
                     add_type: match type_check {
                         false => LoadType::Register {
-                            src_register: instruction_slice[0..3].try_into().unwrap(),
+                            src_register: get_number_from_bits(&instruction_slice[0..3]),
                         },
                         true => LoadType::Immediate {
-                            value: instruction_slice[0..5].try_into().unwrap(),
+                            value: get_number_from_bits(&instruction_slice[0..5]),
                         },
                     },
                 }
             }
             6 => Instructions::LoadRegister {
-                offset6: instruction_slice[0..6].try_into().unwrap(),
-                base_register: instruction_slice[6..9].try_into().unwrap(),
-                dest_register: instruction_slice[9..12].try_into().unwrap(),
+                offset6: sign_extend(get_number_from_bits(&instruction_slice[0..6]), 6),
+                base_register: get_number_from_bits(&instruction_slice[6..9]),
+                dest_register: get_number_from_bits(&instruction_slice[9..12]),
             },
             7 => Instructions::StoreRegister {
-                offset6: instruction_slice[0..6].try_into().unwrap(),
-                base_register: instruction_slice[6..9].try_into().unwrap(),
-                dest_register: instruction_slice[9..12].try_into().unwrap(),
+                offset6: sign_extend(get_number_from_bits(&instruction_slice[0..6]), 6),
+                base_register: get_number_from_bits(&instruction_slice[6..9]),
+                src_register: get_number_from_bits(&instruction_slice[9..12]),
             },
             9 => Instructions::Not {
-                dest_register: instruction_slice[9..12].try_into().unwrap(),
-                src_register: instruction_slice[6..9].try_into().unwrap(),
+                dest_register: get_number_from_bits(&instruction_slice[9..12]),
+                src_register: get_number_from_bits(&instruction_slice[6..9]),
             },
             10 => Instructions::LoadIndirect {
-                pc_offset_9: instruction_slice[0..9].try_into().unwrap(),
-                dest_register: instruction_slice[9..12].try_into().unwrap(),
+                pc_offset_9: sign_extend( get_number_from_bits(&instruction_slice[0..9]),9),
+                dest_register: get_number_from_bits(&instruction_slice[9..12]),
             },
             11 => Instructions::StoreIndirect {
-                pc_offset_9: instruction_slice[0..9].try_into().unwrap(),
-                src_register: instruction_slice[9..12].try_into().unwrap(),
+                pc_offset_9: get_number_from_bits(&instruction_slice[0..9]),
+                src_register: get_number_from_bits(&instruction_slice[9..12]),
             },
             12 => {
                 let base_register: [bool; 3] = instruction_slice[6..9].try_into().unwrap();
-                if get_number_from_bits(&base_register) == 7 {
+                let base_register = get_number_from_bits(&base_register);
+                if base_register == 7 {
                     Instructions::Jump(JumpType::Return)
                 } else {
                     Instructions::Jump(JumpType::BaseRegister(base_register))
                 }
             }
             14 => Instructions::LoadEffectiveAddress {
-                pc_offset_9: instruction_slice[0..9].try_into().unwrap(),
-                dest_register: instruction_slice[9..12].try_into().unwrap(),
+                pc_offset_9: sign_extend(get_number_from_bits(&instruction_slice[0..9]), 9),
+                dest_register: get_number_from_bits(&instruction_slice[9..12]),
             },
             15 => Instructions::Trap {
-                trap_vector: instruction_slice[0..8].try_into().unwrap(),
+                trap_vector: get_number_from_bits(&instruction_slice[0..8]),
             },
             8 | 13 => Instructions::UnImplemented(op_code),
             _ => panic!("Not implemented {:x}", op_code),
