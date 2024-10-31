@@ -334,6 +334,10 @@ impl VmCPU {
                                 Registers::GeneralRegister(General::R0).into();
                             self.update_flag(register_index as u16);
                         }
+                        TrapType::Halt => {
+                            println!("Exiting");
+                            break;
+                        }
                         _ => todo!("Trap {:?}", trap),
                     }
                 }
