@@ -1,7 +1,7 @@
 use std::io::Read;
 
 use crate::{
-    instructions::{Instructions, JumpType, LoadType},
+    instructions::{Instructions, JumpRegisterType, JumpType, LoadType},
     memory::Memory,
     register::{General, Registers, REGISTER_COUNT},
     trap::TrapType,
@@ -93,7 +93,26 @@ impl VmCPU {
                     p,
                     z,
                     n,
-                } => {}
+                } => {
+                    let mut condition_flag = 0u16;
+                    if n {
+                        condition_flag |= 0b100;
+                    }
+                    if z {
+                        condition_flag |= 0b010;
+                    }
+                    if p {
+                        condition_flag |= 0b001;
+                    }
+
+                    if condition_flag & self.read_register(Registers::Condition) != 0 {
+                        let pc_value = self.read_register(Registers::ProgramCounter);
+                        self.update_register(
+                            Registers::ProgramCounter,
+                            pc_value.wrapping_add(pc_offset_9),
+                        );
+                    }
+                }
                 Instructions::Add {
                     dest_register,
                     src_register,
@@ -145,7 +164,7 @@ impl VmCPU {
                 }
                 Instructions::JumpRegister(register_type) => {
                     match register_type {
-                        crate::instructions::JumpRegisterType::FromOffset { pc_offset_11 } => {
+                        JumpRegisterType::FromOffset { pc_offset_11 } => {
                             //
                             let pc_value = self.read_register(Registers::ProgramCounter);
                             self.update_register(Registers::GeneralRegister(General::R7), pc_value);
@@ -155,7 +174,7 @@ impl VmCPU {
                                 pc_value.wrapping_add(pc_offset_11),
                             );
                         }
-                        crate::instructions::JumpRegisterType::FromRegister { base_register } => {
+                        JumpRegisterType::FromRegister { base_register } => {
                             todo!("register")
                         }
                     }
@@ -214,7 +233,7 @@ impl VmCPU {
                         !self.read_register(src_register.into()),
                     );
                     self.update_flag(dest_register.into());
-                },
+                }
                 Instructions::LoadIndirect {
                     pc_offset_9,
                     dest_register,
@@ -240,7 +259,12 @@ impl VmCPU {
                         .write_memory(location as usize, self.read_register(src_register.into()));
                 }
                 Instructions::Jump(jump_type) => match jump_type {
-                    JumpType::BaseRegister(_) => todo!(),
+                    JumpType::BaseRegister(register) => {
+                        self.update_register(
+                            Registers::ProgramCounter,
+                            self.read_register(Registers::from(register)),
+                        );
+                    }
                     JumpType::Return => {
                         self.update_register(
                             Registers::ProgramCounter,
@@ -289,14 +313,14 @@ impl VmCPU {
                             }
 
                             let string: String = chars.into_iter().collect();
-                            println!("{}", string);
+                            print!("{}", string);
                         }
                         TrapType::Out => {
                             let character = std::char::from_u32(
                                 self.read_register(Registers::GeneralRegister(General::R0)) as u32,
                             )
                             .unwrap();
-                            println!("{}", character);
+                            print!("{}", character);
                         }
                         TrapType::Get => {
                             let mut buffer = [0 as u8; 1];
@@ -306,7 +330,8 @@ impl VmCPU {
                                 Registers::GeneralRegister(General::R0),
                                 buffer[0] as u16,
                             );
-                            let register_index: usize = Registers::GeneralRegister(General::R0).into();
+                            let register_index: usize =
+                                Registers::GeneralRegister(General::R0).into();
                             self.update_flag(register_index as u16);
                         }
                         _ => todo!("Trap {:?}", trap),

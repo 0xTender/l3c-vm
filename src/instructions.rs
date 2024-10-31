@@ -170,7 +170,7 @@ impl Instructions {
                 let n = instruction_slice[11];
 
                 Instructions::Branch {
-                    pc_offset_9: get_number_from_bits(&instruction_slice[0..9]),
+                    pc_offset_9: sign_extend(get_number_from_bits(&instruction_slice[0..9]), 9),
                     p,
                     z,
                     n,

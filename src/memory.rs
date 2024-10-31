@@ -8,7 +8,6 @@ use std::{
 pub struct Memory {
     data: [u16; 1 << 16],
     pub pc_start: usize,
-    pub pc_end: usize,
 }
 
 const KEY_BOARD_STATUS: u16 = 0xFE00;
@@ -37,12 +36,9 @@ impl Memory {
             pc = pc + 1;
         }
 
-        let pc_end = pc;
-
         Ok(Self {
             data: memory,
             pc_start,
-            pc_end,
         })
     }
 
